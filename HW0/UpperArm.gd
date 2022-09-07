@@ -12,11 +12,11 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if(Input.is_physical_key_pressed(KEY_W)):
-		transform.basis.y += 0.05*transform.basis.z
+		transform.basis.y += 0.02*transform.basis.z
 	if(Input.is_physical_key_pressed(KEY_S)):
-		transform.basis.y += -0.05*transform.basis.z
+		transform.basis.y += -0.02*transform.basis.z
 		
 	transform.basis = transform.basis.orthonormalized()
 	pass
