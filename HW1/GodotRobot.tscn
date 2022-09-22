@@ -113,6 +113,9 @@ material/0 = SubResource( 21 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.866026, 0.5, 0, -0.5, 0.866026, 0, 15, 15 )
+fov = 80.0
+near = 0.34
+far = 2015.8
 
 [node name="Ground" type="MeshInstance" parent="."]
 mesh = SubResource( 6 )
