@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="HW0"
+config/name="HW1"
 run/main_scene="res://GodotRobot.tscn"
 config/icon="res://icon.png"
 
