@@ -39,8 +39,8 @@ void fragment()
 	vec3 rockDetail = texture(rockTexture,2048.0*groundTC).rgb;
 	vec3 treeDetail = texture(treeTexture,512.0*groundTC).rgb;
 	
-	vec3 rock = (rockCoarse+0.5)*(rockDetail+0.1); // grey rocks
-	vec3 tree = (treeCoarse+0.4)*treeDetail; // contrasty trees
+	vec3 rock = (rockCoarse+0.3)*(rockDetail+0.3); // grey rocks
+	vec3 tree = (treeCoarse+0.3)*treeDetail; // contrasty trees
 	tree *= biome; // tint trees to the color of the satellite image
 	
 	// WATER
