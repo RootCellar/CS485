@@ -86,7 +86,7 @@ void vertex() {
 	elevation = elevationScale*texture(elevationTexture,groundTC).r;
 	
 	///*
-	vec3 biome = texture(biomeTexture,groundTC).rgb + vec3(1.0);
+	vec3 biome = texture(biomeTexture,groundTC).rgb + vec3(0.6);
 	if(biome.b > water_threshold) {
 		float	time			 = TIME * wave_speed;
 	
@@ -103,7 +103,7 @@ void vertex() {
 		vertex_tangent 	 = tang;
 		vertex_binormal  = bin;
 
-		vertex_position  = vertex.xyz;
+		//vertex_position  = vertex.xyz;
 
 		vertex_height	 = (PROJECTION_MATRIX * MODELVIEW_MATRIX * vertex).z;
 
