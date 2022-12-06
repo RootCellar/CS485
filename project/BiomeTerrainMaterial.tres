@@ -12,6 +12,7 @@
 
 [resource]
 shader = ExtResource( 6 )
+shader_param/water_threshold = 0.8
 shader_param/wave_speed = 0.2
 shader_param/wave_a = Plane( 1, 1, 0.35, 3 )
 shader_param/wave_b = Plane( 1, 0.6, 0.3, 1.55 )

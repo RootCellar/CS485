@@ -2,6 +2,8 @@
 shader_type spatial;
 render_mode cull_disabled;
 
+uniform float water_threshold;
+
 ///* Water Shader
 
 // Copyright (c) 2019 UnionBytes, Achim Menzel (alias AiYori)
@@ -85,7 +87,7 @@ void vertex() {
 	
 	///*
 	vec3 biome = texture(biomeTexture,groundTC).rgb + vec3(1.0);
-	if(biome.b > 0.8) {
+	if(biome.b > water_threshold) {
 		float	time			 = TIME * wave_speed;
 	
 		vec4	vertex			 = vec4(VERTEX, 1.0);
@@ -130,7 +132,7 @@ void fragment()
 	vec3 biome = texture(biomeTexture,groundTC).rgb;
 	
 	// Bump map the surface using the normal texture
-	if(biome.b < 0.8) {
+	if(biome.b < water_threshold) {
 		vec3 normal = texture(normalTexture,groundTC).rgb;
 		normal = normal*2.0-1.0; // convert color 0..1 to coordinate -1..+1
 		normal.xy *= 0.5; // tone down the slopes
@@ -169,7 +171,7 @@ void fragment()
 	}
 	
 	///*
-	if(biome.b > 0.8) {
+	if(biome.b > water_threshold) {
 		/*
 		ALPHA = 0.5;
 		ALBEDO = vec3(0.0, 0.2, 0.5);
@@ -225,7 +227,7 @@ void fragment()
 				*/
 		
 		// Set all values:
-		ALPHA = 1.0;
+		ALPHA = 0.65;
 		ALBEDO = color;
 		METALLIC = 0.1;
 		ROUGHNESS = 0.2;
