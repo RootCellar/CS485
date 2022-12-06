@@ -16,7 +16,7 @@ shader_type 	spatial;
 
 
 // Wave settings:
-uniform float	wave_speed		 = 0.5; // Speed scale for the waves
+uniform float	wave_speed		 = 0.2; // Speed scale for the waves
 uniform vec4	wave_a			 = vec4(1.0, 1.0, 0.35, 3.0); 	// xy = Direction, z = Steepness, w = Length
 uniform	vec4	wave_b			 = vec4(1.0, 0.6, 0.30, 1.55);	// xy = Direction, z = Steepness, w = Length
 uniform	vec4	wave_c			 = vec4(1.0, 1.3, 0.25, 0.9); 	// xy = Direction, z = Steepness, w = Length
@@ -162,6 +162,7 @@ void fragment()
 			}
 	
 	// Set all values:
+	ALPHA = 0.5;
 	ALBEDO = color;
 	METALLIC = 0.1;
 	ROUGHNESS = 0.2;
